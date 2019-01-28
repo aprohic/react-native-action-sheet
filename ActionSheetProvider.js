@@ -3,29 +3,6 @@ import PropTypes from 'prop-types';
 import ActionSheet from './ActionSheet';
 
 export default class ActionSheetProvider extends React.Component {
-  static propTypes = {
-    textStyle: PropTypes.object,
-    tintIcons: PropTypes.bool,
-    tintColor: PropTypes.string,
-    titleTextStyle: PropTypes.object,
-    messageTextStyle: PropTypes.object,
-    showSeparators: PropTypes.bool,
-    separatorStyle: PropTypes.object,
-    children: PropTypes.any.isRequired,
-  };
-
-  static childContextTypes = {
-    showActionSheetWithOptions: PropTypes.func,
-  };
-
-  static defaultProps = {
-    textStyle: {},
-    tintIcons: true,
-    titleTextStyle: {},
-    messageTextStyle: {},
-    showSeparators: false,
-    separatorStyle: {},
-  };
 
   getNextValue = (config, propKey) => config[propKey] !== undefined ? config[propKey] : this.props[propKey];
 
@@ -59,3 +36,28 @@ export default class ActionSheetProvider extends React.Component {
     );
   }
 }
+
+ActionSheetProvider.childContextTypes = {
+    showActionSheetWithOptions: PropTypes.func,
+};
+
+ActionSheetProvider.propTypes = {
+  textStyle: PropTypes.object,
+  tintIcons: PropTypes.bool,
+  tintColor: PropTypes.string,
+  titleTextStyle: PropTypes.object,
+  messageTextStyle: PropTypes.object,
+  showSeparators: PropTypes.bool,
+  separatorStyle: PropTypes.object,
+  children: PropTypes.any.isRequired,
+};
+
+
+ActionSheetProvider.defaultProps = {
+  textStyle: {},
+  tintIcons: true,
+  titleTextStyle: {},
+  messageTextStyle: {},
+  showSeparators: false,
+  separatorStyle: {},
+};
