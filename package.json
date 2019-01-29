@@ -4,7 +4,8 @@
   "description": "A cross-platform ActionSheet for React Native",
   "main": "index.js",
   "scripts": {
-    "flow": "flow; test $? -eq 0 -o $? -eq 2"
+    "flow": "flow; test $? -eq 0 -o $? -eq 2",
+    "compile": "babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -34,9 +35,12 @@
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
     "@types/react": "^16.4.6",
     "@types/react-native": "^0.56.0",
     "flow-bin": "^0.26.0",
+    "metro-react-native-babel-preset": "^0.51.1",
     "react": "^15.6.1",
     "react-native": "^0.28.0"
   }

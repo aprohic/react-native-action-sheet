@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { ActionSheetIOS, View, Platform } from 'react-native';
+import { ActionSheetIOS, View, ScrollView, Platform } from 'react-native';
 
-class ActionSheetIOS extends React.Component {
+class Expo_ActionSheetIOS extends React.Component {
     render() {
         return <View style={{ flex: 1 }}>{React.Children.only(this.props.children)}</View>;
     }
@@ -522,4 +522,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Platform.OS === 'ios' ? ActionSheetIOS : ActionSheetAndroid;
+export default Platform.OS === 'ios' ? Expo_ActionSheetIOS : ActionSheetAndroid;
